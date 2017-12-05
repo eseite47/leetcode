@@ -19,23 +19,13 @@ return [0, 1].
 
  // CODE
 
-var twoSum = function(nums, target) {
-    let head = 0
-    let tail = nums.length - 1
-    let found = false
-    while (!found){
-        let sum = nums[head] + nums[tail]
-        if (sum === target){
-            found = true
-            let result = []
-            head > tail ? result = [tail, head] : result = [head, tail]
-            return result
-        }
-        else if (sum > target){
-            tail--
-        }
-        else {
-            head++
+ var twoSum = function(nums, target) {
+    for (var i = 0; i < nums.length; i++){
+        let match = target - nums[i]
+        index = nums.indexOf(match)
+        console.log(i, nums[i], match, index)
+        if(index > -1 && index !== i ){
+             return [i, index]
         }
     }
 };
