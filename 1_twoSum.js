@@ -22,9 +22,8 @@ return [0, 1].
  var twoSum = function(nums, target) {
     for (var i = 0; i < nums.length; i++){
         let match = target - nums[i]
-        index = nums.indexOf(match)
-        console.log(i, nums[i], match, index)
-        if(index > -1 && index !== i ){
+        let index = nums.indexOf(match)
+        if (index > -1 && index !== i ){
              return [i, index]
         }
     }
